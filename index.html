@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>velvet_north | Tools</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --panel: #12181f;
+    --border: #232b33;
+    --text: #d7dde3;
+    --muted: #7d8894;
+    --accent: #5fb0ff;
+    --accent-dim: #2a4a63;
+    --mono: "SFMono-Regular", "JetBrains Mono", Consolas, "Menlo", monospace;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--mono);
+    line-height: 1.6;
+    padding: 0 20px;
+  }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 0 96px;
+  }
+  .prompt {
+    color: var(--accent);
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  h1 {
+    font-size: 28px;
+    margin: 0 0 6px;
+    color: #fff;
+    font-weight: 600;
+  }
+  .sub {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 48px;
+  }
+  .sub a { color: var(--accent); text-decoration: none; }
+  .sub a:hover { text-decoration: underline; }
+
+  section { margin-bottom: 40px; }
+  .card {
+    display: block;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px 22px;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color .15s ease, transform .15s ease;
+  }
+  .card:hover {
+    border-color: var(--accent-dim);
+    transform: translateY(-1px);
+  }
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+  }
+  .card-name {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .card-status {
+    font-size: 11px;
+    color: #6fd68a;
+    border: 1px solid #234a30;
+    background: #10251a;
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+  .card-desc {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-bottom: 12px;
+  }
+  .card-stack {
+    font-size: 12px;
+    color: var(--accent);
+  }
+  .card-stack span {
+    color: var(--muted);
+  }
+
+  footer {
+    margin-top: 64px;
+    color: var(--muted);
+    font-size: 12px;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+  }
+</style>
+</head>
+<body>
+<main>
+  <div class="prompt">$ ls ./tools</div>
+  <h1>velvet_north / tools</h1>
+  <div class="sub">
+    動画制作を効率化するために自作したツール2点です。要件定義からAIとの協働で構築し、実際の制作フローで運用しています。
+  </div>
+
+  <section>
+    <a class="card" href="https://subtitletoolv2-production.up.railway.app" target="_blank" rel="noopener">
+      <div class="card-top">
+        <span class="card-name">subtitle_tool_v2</span>
+        <span class="card-status">● live</span>
+      </div>
+      <div class="card-desc">
+        字幕の翻訳・言い回し提案・文脈確認をまとめて行う翻訳支援ツール。
+      </div>
+      <div class="card-stack"><span>stack:</span> Flask / Anthropic API / OpenAI API</div>
+    </a>
+  </section>
+
+  <section>
+    <a class="card" href="https://subtitlehelperflask-production.up.railway.app" target="_blank" rel="noopener">
+      <div class="card-top">
+        <span class="card-name">subtitle_helper_flask</span>
+        <span class="card-status">● live</span>
+      </div>
+      <div class="card-desc">
+        動画から音声を切り出し、聞き取り候補との一致を判定する音声確認ツール。
+      </div>
+      <div class="card-stack"><span>stack:</span> Flask / ffmpeg / Google Speech-to-Text</div>
+    </a>
+  </section>
+
+  <footer>
+    Built with AI-assisted development. Deployed on Railway.
+  </footer>
+</main>
+</body>
+</html>
